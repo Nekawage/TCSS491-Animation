@@ -1,7 +1,7 @@
 class SkeletonWalk {
     constructor(gameEngine, x, y) {
         this.game = gameEngine;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./skeleton_walk.png"), 0, 0, 64, 64, 8, 0.1, 128, 128);
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./skeleton_walk.png"), 0, 0, 64, 64, 8, 0.125, 128, 128);
 
         this.x = x;
         this.y = y;
