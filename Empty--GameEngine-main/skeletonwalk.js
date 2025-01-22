@@ -1,19 +1,19 @@
 class SkeletonWalk {
-    constructor(gameEngine) {
+    constructor(gameEngine, x, y) {
         this.game = gameEngine;
-        this.animator = new Animator(ASSET_MANAGER.getAsset("./skeleton_walk.png"), 0, 0, 64, 64, 8, 0.1);
+        this.animator = new Animator(ASSET_MANAGER.getAsset("./skeleton_walk.png"), 0, 0, 64, 64, 8, 0.1, 128, 128);
 
-        this.x = 0;
-        this.y = 352;
-        this.speed = 50;
+        this.x = x;
+        this.y = y;
+        this.speed = 200;
     };
 
     update() {
         this.x += this.speed * this.game.clockTick;
-        if (this.x > 1024) this.x = 0;
+        if (this.x > 1200) this.x = -64;
     };
 
     draw(ctx) {
-        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y);
+        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 128, 128);
     };
 }

@@ -1,12 +1,12 @@
 class Animator {
-    constructor(spritesheet, xStart, yStart, width, height, frameCount, frameDuration) {
-        Object.assign(this, {spritesheet, xStart, yStart, width, height, frameCount, frameDuration});
+    constructor(spritesheet, xStart, yStart, width, height, frameCount, frameDuration, xScale, yScale) {
+        Object.assign(this, {spritesheet, xStart, yStart, width, height, frameCount, frameDuration, xScale, yScale});
 
         this.elapsedTime = 0;
         this.totalTime = frameCount * frameDuration;
     };
 
-    drawFrame(tick, ctx, x, y) {
+    drawFrame(tick, ctx, x, y, xScale, yScale) {
         this.elapsedTime += tick;
         if (this.elapsedTime > this.totalTime) this.elapsedTime -= this.totalTime;
         const frame = this.currentFrame();
@@ -15,7 +15,7 @@ class Animator {
             this.xStart + this.width * frame, this.yStart,
             this.width, this.height,
             x, y,
-            this.width, this.height);
+            xScale, yScale);
     };
 
     currentFrame() {
