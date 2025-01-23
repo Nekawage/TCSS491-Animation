@@ -14,6 +14,6 @@ class SkeletonWalk {
     };
 
     draw(ctx) {
-        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 128, 128);
+        this.animator.drawFrame(this.game.clockTick, ctx, this.x, this.y, 128, 128, false);
     };
 }
