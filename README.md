@@ -1,3 +1,3 @@
 # TCSS 491 - Animation Assignment (Solo)
-Ken Egawa 
+Ken Egawa   
 Simple "Skelly Stampede" animation.
